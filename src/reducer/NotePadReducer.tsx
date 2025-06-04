@@ -2,7 +2,7 @@ import type { Note } from "../context/NotePadContext"
 
 export type NotepadState = {
      notes: Note[],
-     selectionCategory: String
+     selectionCategory: string
 }
 
 export const initialState : NotepadState = {
@@ -12,21 +12,21 @@ export const initialState : NotepadState = {
 
 type AddNote = {
    type: "Add-A-Note",  
-    note_title: String,
-    description: String,
-    cId: String
+    note_title: string,
+    description: string,
+    cId: string
 }
 
 
 type DeleteNote = {
     type: "Delete-A-Note",
-    NoteToBeDeleted: Number
+    NoteToBeDeleted: number
 
 }
 
 type UpdateNote = {
     type: "Edit-A-Note",
-    NoteTobeUpdated: Number
+    NoteTobeUpdated: number
 
 }
 
