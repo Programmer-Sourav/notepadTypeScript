@@ -1,11 +1,13 @@
-import type { JSX } from "react";
+import { useEffect, useState, type JSX } from "react";
 import { useNotePadContext, type Note } from "./context/NotePadContext";
+
 import "./createnode.css"
+import { getNotes } from "./remote/remote-api";
 
 const NotesList = () : JSX.Element =>{
 
      const { notes, dispatch } = useNotePadContext();
-
+     const [data, setData] = useState([])
 
 
      const deleteANoteById = (NoteToBeDeleted : number) =>{
@@ -20,6 +22,13 @@ const NotesList = () : JSX.Element =>{
      const editANote = (NoteToBeDeleted : number) =>{
         
      }
+
+     useEffect(()=>{
+        getNotes(dispatch)
+        //dispatch({type: "Add-A-Note",  note_title, description, cId})
+     }, [])
+
+     console.log(3333, )
 
     return(
         <>
